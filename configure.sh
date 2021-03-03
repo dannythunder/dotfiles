@@ -197,7 +197,6 @@ ohmyzshPluginInstall
 pl9kInstall
 pl10kInstall
 tmuxTpmInstall
-fubectlInstall
 
 #vim setup
 vundleInstall
@@ -221,7 +220,9 @@ then
 	echo ''
 	echo "Now configuring symlinks..." && $HOME/.dotfiles/script/bootstrap
     echo ''
+    fubectlInstall
 
+    echo 'Installed FUBECTL'
     if [[ $? -eq 0 ]]
     then
         echo "Successfully configured your environment with jldeen's macOS dotfiles..."
