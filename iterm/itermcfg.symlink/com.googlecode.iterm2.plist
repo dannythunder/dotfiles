@@ -36804,11 +36804,11 @@
 			<key>Name</key>
 			<string>Default</string>
 			<key>Non Ascii Font</key>
-			<string>Menlo-Regular 11</string>
+			<string>SauceCodeProNerdFontComplete-Regular 15</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<false/>
 			<key>Normal Font</key>
-			<string>SourceCodeProNerdFontC-Regular 12</string>
+			<string>SauceCodeProNerdFontComplete-Regular 15</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<true/>
 			<key>Option Key Sends</key>
@@ -36892,7 +36892,7 @@
 			<key>Window Type</key>
 			<integer>0</integer>
 			<key>Working Directory</key>
-			<string>/Users/jessicadeen</string>
+			<string>/Users/replaceuser</string>
 		</dict>
 		<dict>
 			<key>ASCII Anti Aliased</key>
@@ -37060,6 +37060,8 @@
 			</dict>
 			<key>Background Image Location</key>
 			<string></string>
+			<key>Cursor Type</key>
+			<real>0</real>
 			<key>Badge Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -37074,7 +37076,7 @@
 				<real>1</real>
 			</dict>
 			<key>Blinking Cursor</key>
-			<false/>
+			<true/>
 			<key>Blur</key>
 			<false/>
 			<key>Bold Color</key>
@@ -37466,7 +37468,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>SourceCodeProNerdFontC-Regular 32</string>
+			<string>SauceCodeProNerdFontComplete-Regular 32</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<true/>
 			<key>Option Key Sends</key>
@@ -37530,7 +37532,7 @@
 			<key>Window Type</key>
 			<integer>0</integer>
 			<key>Working Directory</key>
-			<string>/Users/jessicadeen</string>
+			<string>/Users/replaceuser</string>
 		</dict>
 	</array>
 	<key>NoSyncAllAppVersions</key>
@@ -38275,7 +38277,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/jessicadeen/.itermcfg/</string>
+	<string>/Users/replaceuser/.itermcfg/</string>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedAlternateAppNameKey</key>

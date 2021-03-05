@@ -8,5 +8,7 @@ alias badwifi='k config use-context docker-desktop'
 alias jdk8s='k config use-context jdk8s-us'
 alias jdk8s3='k config use-context jdk8s3'
 alias js='~/bin/show-struct.py'
+alias forecast='curl wttr.in'
+
 #acs-engine
 alias acse="/usr/local/bin/acs-engine"

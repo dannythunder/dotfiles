@@ -102,16 +102,6 @@ ohmyzshPluginInstall () {
     fi
 }
 
-pl9kInstall () {
-    # powerlevel9k install
-    if [ -d "$HOME/.oh-my-zsh/custom/themes/powerlevel9k" ]; then
-        info 'powerlevel9k already installed'
-    else
-        echo "Now installing powerlevel9k..."
-    git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k && success 'powerlevel9k installed'
-    fi
-}
-
 pl10kInstall () {
     # powerlevel10k install
     if [ -d "$HOME/.oh-my-zsh/custom/themes/powerlevel10k" ]; then
@@ -194,7 +184,6 @@ configureGitCompletion
 # oh my zsh setup
 ohmyzshInstall
 ohmyzshPluginInstall
-pl9kInstall
 pl10kInstall
 tmuxTpmInstall
 
@@ -212,17 +201,22 @@ if [[ $REPLY =~ ^[Yy]$ ]]
 then
     echo ''
 	echo "Now pulling down jldeen dotfiles..."
-	git clone https://github.com/jldeen/dotfiles.git ~/.dotfiles
+	git clone https://github.com/dannythunder/dotfiles.git ~/.dotfiles
 	echo ''
 	cd $HOME/.dotfiles && echo "switched to .dotfiles dir..."
 	echo ''
-	echo "Checking out macOS dev branch..." && git checkout mac-dev
+	echo "Checking out macOS dev branch..." && git checkout mac-dev-patch-1
 	echo ''
+
 	echo "Now configuring symlinks..." && $HOME/.dotfiles/script/bootstrap
     echo ''
+
+    # Need to bootstrap (bin symlink etc.) before installing fubectl
     fubectlInstall
 
-    echo 'Installed FUBECTL'
+    # Install Tmux plugins after bootstrap
+    ~/.tmux/plugins/tpm/bin/install_plugins
+
     if [[ $? -eq 0 ]]
     then
         echo "Successfully configured your environment with jldeen's macOS dotfiles..."

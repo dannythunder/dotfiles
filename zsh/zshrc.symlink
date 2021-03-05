@@ -11,7 +11,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 zstyle ':bracketed-paste-magic' active-widgets '.self-*'
 
 # zsh tmux settings
-ZSH_TMUX_AUTOSTART='false'
+ZSH_TMUX_AUTOSTART='true'
 ZSH_TMUX_AUTOCONNECT='false' # do not autoconnect to existing tmux session, allows a new term new tmux session
 
 # #Background Jobs Function
@@ -146,7 +146,7 @@ ZSH_HIGHLIGHT_STYLES[path_approx]=fg=cyan
 ZSH_HIGHLIGHT_PATTERNS+=('rm -rf *' 'fg=white,bold,bg=red') # To have commands starting with `rm -rf` in red:
 
 #---- Export ----
-export PATH=$PATH:/Users/jessicadeen/bin
+export PATH=$PATH:/Users/$(whoami)/bin
 export GOPATH=~/go 
 export PATH=$GOPATH/bin:$PATH
 export GOROOT=/usr/local/opt/go/libexec

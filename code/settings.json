@@ -10,8 +10,8 @@
 "remote.onstartup": true,
 
 // Controls the font family.
-"editor.fontFamily": "'SourceCodePro Nerd Font'",
-"terminal.integrated.fontFamily": "'SourceCodePro Nerd Font'",
+"editor.fontFamily": "'SauceCodePro Nerd Font'",
+"terminal.integrated.fontFamily": "'SauceCodePro Nerd Font'",
 "terminal.integrated.fontSize": 11,
 "workbench.startupEditor": "newUntitledFile",
 "typescript.check.npmIsInstalled": false,
@@ -59,10 +59,9 @@
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "terminal.integrated.rendererType": "dom",
     "vs-kubernetes": {
-        "vs-kubernetes.helm-path": "/Users/jessicadeen/.vs-kubernetes/tools/helm/darwin-amd64/helm",
-        "vs-kubernetes.draft-path": "/Users/jessicadeen/.vs-kubernetes/tools/draft/darwin-amd64/draft",
-        "vs-kubernetes.minikube-path": "/Users/jessicadeen/.vs-kubernetes/tools/minikube/darwin-amd64/minikube",
-        "vs-kubernetes.kubectl-path": "/Users/jessicadeen/.vs-kubernetes/tools/kubectl/kubectl"
+        "vscode-kubernetes.helm-path": "/Users/replaceuser/.vs-kubernetes/tools/helm/darwin-amd64/helm",
+        "vscode-kubernetes.minikube-path": "/Users/replaceuser/.vs-kubernetes/tools/minikube/darwin-amd64/minikube",
+        "vscode-kubernetes.kubectl-path": "/Users/replaceuser/.vs-kubernetes/tools/kubectl/kubectl"
     },
-    "team.showWelcomeMessage": false,
+    "team.showWelcomeMessage": false
 }

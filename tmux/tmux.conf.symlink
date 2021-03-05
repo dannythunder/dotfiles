@@ -90,17 +90,35 @@ set -g @tasks_format_end '#[fg=white,bg=colour236]'
 set -g @tasks_icon_urgent '⧗ '
 set -g @tasks_icon_outstanding '+ '
 
+set -g @batt_icon_charge_tier8 ''
+set -g @batt_icon_charge_tier7 ''
+set -g @batt_icon_charge_tier6 ''
+set -g @batt_icon_charge_tier5 ''
+set -g @batt_icon_charge_tier4 ''
+set -g @batt_icon_charge_tier3 ''
+set -g @batt_icon_charge_tier2 ''
+set -g @batt_icon_charge_tier1 ''
+set -g @batt_icon_status_charged ''
+set -g @batt_icon_status_charging ''
+set -g @batt_icon_status_discharging ''
+set -g @batt_icon_status_attached ''
+set -g @batt_color_status_primary_charged '#3daee9'
+set -g @batt_color_status_primary_charging '#3daee9'
+
 # Status bar ------------------------------------------------------------- 
 # set-option -g status on
 set-option -g set-titles on
-set -g status-interval 1
+set -g status-interval 15
 set-option -g update-environment "SSH_ASKPASS SSH_AUTH_SOCK SSH_AGENT_PID SSH_CONNECTION DISPLAY"
 
 set -g status-position bottom
 set -g status-style bg=colour237,fg=colour137
 set -g status-style 'none'
-set -g status-left ' #[fg=colour197]#(~/bin/internet_info.sh) '
-set -g status-right '#{prefix_highlight} #(eval ~/.tmux/responsive `tmux display -p "#{client_width}"`)#[fg=colour051] #H'
+
+WEATHER='#(curl -s wttr.in/?format\=3&period=30)'
+
+set -g status-left "#[fg=colour197]#(~/bin/internet_info.sh) | #[fg=#ffffff]$WEATHER "
+set -g status-right '#{battery_icon} #{battery_percentage} #[fg=#ffffff]| #[fg=#f5b342]%A v.%W #[fg=#ffffff]| #[fg=#96f542]%d/%m-%y %R'
 set -g status-right-length 100
 
 set -g status-left-length 80
@@ -111,7 +129,7 @@ setw -g window-status-current-style fg=colour170,bg=colour239,bold
 
 setw -g window-status-current-format ' #I#[fg=colour250]:#[fg=colour255]#W#[fg=colour170]#F '
 
-set-option -g set-titles-string 'do epic shit. | #S | / #W'
+set-option -g set-titles-string 'the feds are watching... | #S | / #W'
 setw -g window-status-current-format ' #I#[fg=colour250]:#[fg=colour255]#W#[fg=colour170]#F '
 
 # Plugins
@@ -129,6 +147,7 @@ setw -g window-status-current-format ' #I#[fg=colour250]:#[fg=colour255]#W#[fg=c
    tmux-plugins/tmux-online-status \
    tmux-plugins/tmux-resurrect  \
    tmux-plugins/tmux-yank \
+   tmux-plugins/tmux-battery \
 '
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)

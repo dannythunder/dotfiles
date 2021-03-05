@@ -179,6 +179,12 @@ jd_Symlinks () {
     echo "Making backup of current settings.json and creating symlink..."
     echo ''
     mv $HOME/Library/Application\ Support/Code/User/settings.json $HOME/Library/Application\ Support/Code/User/settings.old.json && success "settings.old.json created"
+
+    # set current user in file
+    local user="$(whoami)"
+    sed -i '' "s/replaceuser/$user/g" $HOME/.dotfiles/code/settings.json
+
+
     ln -s $HOME/.dotfiles/code/settings.json $HOME/Library/Application\ Support/Code/User/settings.json && success "settings.json for vs code symlink created"
   else
     info "symlink for vs code settings not created"
@@ -241,6 +247,10 @@ jditermConfig () {
   echo ''
   if [[ $REPLY =~ ^[Yy]$ ]]
   then
+    #Replace user in file
+    local user="$(whoami)"
+    sed -i '' "s/replaceuser/$user/g" ~/.dotfiles/iterm/itermcfg.symlink/com.googlecode.iterm2.plist
+
     # Specify the preferences directory
     defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$HOME/.itermcfg/"
     # Tell iTerm2 to use the custom preferences in the directory
@@ -257,10 +267,9 @@ jditermConfig () {
 }
 
 jdFontSetup () {
-  # install Source Code Pro nerd font
-  info "Copying Nerd Font to system font."
-  sudo cp $HOME/.dotfiles/Source\ Code\ Pro\ Nerd\ Font\ Complete.ttf /Library/Fonts
-  success "Source Code Pro font copied successfully!"
+  # install Sauce Code Pro nerd font
+  cp $HOME/.dotfiles/SauceCodeProNerdFontComplete.ttf /Library/Fonts
+  success "Sauce Code Pro font copied successfully!"
 }
 
 jdconfigFix () {
